@@ -1,4 +1,4 @@
-object PascalsTriangle extends App{
+object PascalsTriangle{
 
   val row1 = List(1)
 
@@ -23,4 +23,5 @@ object PascalsTriangle extends App{
 
     addRows(1)
   }
+
 }
