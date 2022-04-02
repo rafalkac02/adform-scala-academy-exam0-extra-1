@@ -1,27 +1,28 @@
-object PascalsTriangle{
+object PascalsTriangle extends App {
 
-  val row1 = List(1)
+  type Row = Seq[Int]
 
-  def nextRow(row: Seq[Int]): Seq[Int] = {
+  // analyze given row and return next row according to the Pascal's Triangle rules
+  def nextRow(row: Row): Row = {
     // zip two rows to compare and get sum
     val pairs = (0 +: row).zip(row :+ 0)
     pairs.map({ case (a, b) => a + b })
   }
 
-  def generateTriangle(n: Int): Seq[Seq[Int]] = {
-    var triangle = Seq.empty[Seq[Int]]
 
-    def addRows(counter: Int): Seq[Seq[Int]] = counter match {
-      case 1 =>
-        Seq(1) ++ addRows(counter + 1)
-        triangle
-      case x if (x == n+1) => triangle
-      case _ =>
-        triangle = triangle :+ nextRow(triangle.last)
-        triangle
+  // return pascal's triangle (Seq of Rows)
+  def pascalTriangle(n: Int): Seq[Row] = {
+    var rows = n match {
+      case 0 => Seq.empty
+      case _ => Seq(Seq(1))
     }
 
-    addRows(1)
+    def addRows(n: Int): Seq[Row] = rows.length match {
+      case l if l >= n => rows
+      case _ =>
+        rows = rows :+ nextRow(rows.last)
+        addRows(n)
+    }
+    addRows(n)
   }
-
 }
