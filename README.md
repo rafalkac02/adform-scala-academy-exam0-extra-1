@@ -2,8 +2,24 @@
 
 This is an extra exercise number 1 from exam conducted after 1st month of Scala Academy at [Adform](https://github.com/adform).
 
-Exercise rules & description: [link](https://exercism.org/tracks/scala/exercises/pascals-triangle).
+### Task description
 
+Compute Pascal's triangle up to a given number of rows.
+
+In Pascal's Triangle each number is computed by adding the numbers to the right and left of the current position in the previous row.
+
+```
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+# ... etc
+```
+
+Description adapted from: [source](https://exercism.org/tracks/scala/exercises/pascals-triangle).
+
+---
 ### Table of contents
 ##### Scala Coding Problems
 1. [Letter value sum](https://github.com/rafalkac02/adform-scala-academy-exam0-exercise-1)
